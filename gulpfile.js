@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 
 ///// Compile/Validate JS /////
 gulp.task('js', function () {
-	gulp.src('./js/app.js')
+	return gulp.src('./js/app.js')
 	.pipe(plumber())
 	.pipe(jshint())
 	.pipe(jshint.reporter('default', { verbose: true }))
@@ -33,7 +33,7 @@ gulp.task('sass', function () {
 
 ///// Get HTML /////
 gulp.task('html', function () {
-	gulp.src('./*.html')
+	return gulp.src('./*.html')
 	.pipe(gulp.dest('./'))
 });
 
@@ -54,6 +54,3 @@ gulp.task('browser-sync', function () {
 // Default Task
 //////////////////////////////
 gulp.task('default', ['browser-sync']);
-
-
-
